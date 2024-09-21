@@ -32,11 +32,11 @@ public class Dealer {
                 } else {
                     break;
                 }
-                if (hand.calc() >= 22) {
-                    System.out.println("Dealer bust, you win!");
-                    System.exit(0);
-                }
             }
+        }
+        if (hand.calc() >= 22) {
+            System.out.println("Dealer bust, you win!");
+            System.exit(0);
         }
         return hand.calc();
     }
