@@ -27,7 +27,7 @@ public class Game {
     public void nextCard() {
         boolean contplay = true;
         while (contplay) {
-            System.out.println("Please enter 1 if you want one more card, enter 2 if you want to calculate your hand");
+            System.out.println("Please enter 1 if you want one more card, enter 2 if you want to finish and calculate your hand");
             int in1 = sc.nextInt();
             while (in1 != 1 && in1 != 2) {
                 System.out.println("Invalid input, please enter 1 or 2.");
@@ -42,9 +42,14 @@ public class Game {
                 hand.dispHand();
                 hand.calc();
                 int i = hand.calc();
-                System.out.println("Your total is " + i);
-                playerTotal = i;
-                contplay = false;
+                if (i > 21) {
+                    System.out.println("Your score is " + i + " You bust");
+                    System.exit(0);
+                } else {
+                    System.out.println("Your total is " + i);
+                    playerTotal = i;
+                    contplay = false;
+                }
             }
         }
     }

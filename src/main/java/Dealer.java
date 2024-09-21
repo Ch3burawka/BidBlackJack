@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Dealer {
     Deck deck = new Deck();
@@ -14,6 +15,7 @@ public class Dealer {
     }
 
     public int dealerPlay() {
+        Random rand = new Random();
         String card = deck.dealCard();
         addCard(card);
         hand.addCard(card);
@@ -21,6 +23,20 @@ public class Dealer {
             card = deck.dealCard();
             addCard(card);
             hand.addCard(card);
+            while (hand.calc() > 12 && hand.calc() < 17) {
+                int num = rand.nextInt(100);
+                if (num < 20) {
+                    card = deck.dealCard();
+                    addCard(card);
+                    hand.addCard(card);
+                } else {
+                    break;
+                }
+                if (hand.calc() >= 22) {
+                    System.out.println("Dealer bust, you win!");
+                    System.exit(0);
+                }
+            }
         }
         return hand.calc();
     }
