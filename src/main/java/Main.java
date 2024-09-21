@@ -1,9 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Cards cards = new Cards();
-        cards.shuffleDeck();
-        cards.printDeck();
-        cards.play();
-        cards.nextcard();
+        Deck deck = new Deck();
+        Game game = new Game();
+        Dealer dealer = new Dealer();
+//        deck.printDeck();
+        deck.shuffleDeck();
+        game.play();
+        game.nextCard();
+        dealer.dealerPlay();
+        game.compare();
     }
 }
