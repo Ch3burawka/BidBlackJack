@@ -3,10 +3,11 @@ import java.util.Collections;
 
 public class Deck {
     ArrayList<String> deck = new ArrayList<>();
-    ArrayList<String> useddeck = new ArrayList<>();
+    ArrayList<String> usedDeck = new ArrayList<>();
 
     public Deck() {
         initDeck();
+        shuffleDeck();
     }
 
     public void initDeck() {
@@ -28,7 +29,7 @@ public class Deck {
     public String dealCard() {
         if (!deck.isEmpty()) {
             String dCard = deck.remove(deck.size() - 1);
-            useddeck.add(dCard);
+            usedDeck.add(dCard);
             return dCard;
         } else {
             return "No cards left to deal";

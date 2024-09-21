@@ -4,7 +4,6 @@ public class Main {
         Game game = new Game();
         Dealer dealer = new Dealer();
 //        deck.printDeck();
-        deck.shuffleDeck();
         game.play();
         game.nextCard();
         dealer.dealerPlay();
