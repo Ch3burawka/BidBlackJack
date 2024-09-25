@@ -37,7 +37,7 @@ public class Dealer {
         }
         if (hand.calc() >= 22) {
             System.out.println("Dealer bust, you win!");
-            System.exit(0);
+            return -1;
         }
         return hand.calc();
     }

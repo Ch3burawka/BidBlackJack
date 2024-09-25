@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
@@ -7,23 +8,33 @@ public class Game {
     Dealer dealer;
     public int playerTotal;
 
-    public Game (Deck deck) {
+    public Game(Deck deck) {
         this.deck = deck;
         this.dealer = new Dealer(deck);
     }
 
     public void play() {
         System.out.println("Welcome to the Big Black Jack to start the game press 1 if you want to quit press 2");
-        int in = sc.nextInt();
-        while (in != 1 && in != 2) {
-            System.out.println("Invalid input");
-            in = sc.nextInt();
+        int in = -1;
+        while (true) {
+            try {
+                in = sc.nextInt();
+                if (in == 1 || in == 2) {
+                    break;
+                } else {
+                    System.out.println("Invalid input, try again");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input, try again");
+                sc.nextLine();
+            }
         }
         if (in == 1) {
-            String i = deck.dealCard();
-            System.out.println("Your card is " + i);
-            hand.addCard(i);
-        } else {
+            String card = deck.dealCard();
+            System.out.println("Your card is: " + card);
+            hand.addCard(card);
+        }
+        else{
             System.exit(0);
         }
     }
@@ -32,10 +43,19 @@ public class Game {
         boolean contplay = true;
         while (contplay) {
             System.out.println("Please enter 1 if you want one more card, enter 2 if you want to finish and calculate your hand");
-            int in1 = sc.nextInt();
-            while (in1 != 1 && in1 != 2) {
-                System.out.println("Invalid input, please enter 1 or 2.");
-                in1 = sc.nextInt();
+            int in1 = -1;
+            while (true) {
+                try {
+                    in1 = sc.nextInt();
+                    if (in1 != 1 && in1 != 2) {
+                        System.out.println("Invalid input, enter 1 or 2");
+                    } else {
+                        break;
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input, enter 1 or 2");
+                    sc.nextLine();
+                }
             }
             if (in1 == 1) {
                 String newCard = deck.dealCard();
@@ -47,7 +67,7 @@ public class Game {
                 int i = hand.calc();
                 if (i > 21) {
                     System.out.println("Your score is " + i + " You bust");
-                    System.exit(0);
+                    return;
                 } else {
                     System.out.println("Your total is " + i);
                     playerTotal = i;
@@ -67,5 +87,24 @@ public class Game {
         } else {
             System.out.println("You lose!");
         }
+    }
+
+    public boolean nextGame() {
+        System.out.println("If you want play again press 1 or press 2 if you want to quit");
+        int in = -1;
+        while (true) {
+            try {
+                in = sc.nextInt();
+                if (in == 1 || in == 2) {
+                    break;
+                } else {
+                    System.out.println("Invalid input, please enter 1 or 2.");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input, please enter 1 or 2.");
+                sc.nextLine();
+            }
+        }
+        return in == 1;
     }
 }

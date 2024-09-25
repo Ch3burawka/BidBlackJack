@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d074eeb2-f45d-4e84-81b9-31b1d6305ffa" name="Changes" comment="12">
+    <list default="true" id="d074eeb2-f45d-4e84-81b9-31b1d6305ffa" name="Changes" comment="Now player and Dealer are using same decks.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dealer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
@@ -93,7 +93,8 @@
       <workItem from="1727000071868" duration="136000" />
       <workItem from="1727000590955" duration="37000" />
       <workItem from="1727000669247" duration="1724000" />
-      <workItem from="1727264796847" duration="647000" />
+      <workItem from="1727264796847" duration="1611000" />
+      <workItem from="1727268731568" duration="3573000" />
     </task>
     <task id="LOCAL-00001" summary="12">
       <option name="closed" value="true" />
@@ -135,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726932387785</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Now player and Dealer are using same decks.">
+      <option name="closed" value="true" />
+      <created>1727265614852</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727265614852</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +173,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="12" />
-    <option name="LAST_COMMIT_MESSAGE" value="12" />
+    <MESSAGE value="Now player and Dealer are using same decks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Now player and Dealer are using same decks." />
   </component>
 </project>
