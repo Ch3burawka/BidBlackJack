@@ -2,10 +2,15 @@ import java.util.Scanner;
 
 public class Game {
     Scanner sc = new Scanner(System.in);
-    Deck deck2 = new Deck();
+    Deck deck;
     Hand hand = new Hand();
-    Dealer dealer = new Dealer();
+    Dealer dealer;
     public int playerTotal;
+
+    public Game (Deck deck) {
+        this.deck = deck;
+        this.dealer = new Dealer(deck);
+    }
 
     public void play() {
         System.out.println("Welcome to the Big Black Jack to start the game press 1 if you want to quit press 2");
@@ -15,8 +20,7 @@ public class Game {
             in = sc.nextInt();
         }
         if (in == 1) {
-            deck2.dealCard();
-            String i = deck2.dealCard();
+            String i = deck.dealCard();
             System.out.println("Your card is " + i);
             hand.addCard(i);
         } else {
@@ -34,8 +38,7 @@ public class Game {
                 in1 = sc.nextInt();
             }
             if (in1 == 1) {
-                deck2.dealCard();
-                String newCard = deck2.dealCard();
+                String newCard = deck.dealCard();
                 System.out.println("Your card is " + newCard);
                 hand.addCard(newCard);
             } else {

@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Dealer {
-    Deck deck = new Deck();
+    Deck deck;
     Hand hand = new Hand();
     public ArrayList<String> dHand;
 
-    public Dealer() {
+    public Dealer(Deck deck) {
+        this.deck = deck;
         dHand = new ArrayList<>();
     }
 
